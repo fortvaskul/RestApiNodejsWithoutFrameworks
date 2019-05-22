@@ -5,7 +5,7 @@ module.exports = http.createServer((req, res) => {
   var service = require("./service.js");
   const reqUrl = url.parse(req.url, true);
 
-  // GET Endpoint
+  // GET Endpoint for to view information
   if (reqUrl.pathname == "/user" && req.method === "GET") {
     console.log(
       "Request Type: " + req.method + " Endpoint: " + reqUrl.pathname
@@ -14,7 +14,7 @@ module.exports = http.createServer((req, res) => {
     service.getRequest(req, res);
   }
 
-  // POST Endpoint
+  // POST Endpoint for create user (clean user with new information)
   else if (reqUrl.pathname == "/user" && req.method === "POST") {
     console.log(
       "Request Type: " + req.method + " Endpoint: " + reqUrl.pathname
@@ -23,7 +23,7 @@ module.exports = http.createServer((req, res) => {
     service.postRequest(req, res);
   }
 
-  // DELETE Endpoint
+  // DELETE Endpoint for delete all inf about user (clean user)
   else if (reqUrl.pathname == "/user" && req.method === "DELETE") {
     console.log(
       "Request Type: " + req.method + " Endpoint: " + reqUrl.pathname
@@ -32,7 +32,7 @@ module.exports = http.createServer((req, res) => {
     service.deleteRequest(req, res);
   }
 
-  // PUT Endpoint
+  // PUT Endpoint for update user's inf
   else if (reqUrl.pathname == "/user" && req.method === "PUT") {
     console.log(
       "Request Type: " + req.method + " Endpoint: " + reqUrl.pathname

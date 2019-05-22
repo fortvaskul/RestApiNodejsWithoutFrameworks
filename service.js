@@ -13,6 +13,12 @@ exports.getRequest = function(req, res) {
 };
 
 exports.postRequest = function(req, res) {
+  user = {
+    name: "",
+    hobby: "",
+    responsibility: ""
+  };
+
   body = "";
 
   req.on("data", function(chunk) {
@@ -47,12 +53,6 @@ exports.deleteRequest = function(req, res) {
 };
 
 exports.putRequest = function(req, res) {
-  user = {
-    name: "",
-    hobby: "",
-    responsibility: ""
-  };
-
   body = "";
 
   req.on("data", function(chunk) {
